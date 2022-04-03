@@ -69,6 +69,15 @@ function Matchstick($nb_line, $nb_alu) {
         if ($mod == 1) $user = $user == 1 ? 2 : 1;
         else $humanTurn = !$humanTurn;
     }
+    display($board, $boardWidth);
+    if ($mod == 1) echo  color(2, "Player $user win the game");
+    elseif ($humanTurn)
+        color(2, "lost... snif... but I'll get you next time!!");
+    else
+        color(1, "You lost, too bad...");
+    echo "\n";
+}
+
 /**
  * Initialize the game board
  * 
