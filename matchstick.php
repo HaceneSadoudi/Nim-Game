@@ -16,6 +16,15 @@ function init($board, $nb_line) {
     return $board;
 }
 
+/**
+ * Print a text with a color
+ * 
+ * @param  int    $nbr  : color number
+ * @param  string $txt  : text to color
+ * 
+ * @author Hacene Sadoudi <sadoudi2019@gmail.com>
+ * @return void
+ */
 function color($nbr, $txt) {
     echo `tput setaf $nbr` . $txt . `tput sgr0`;
 }
