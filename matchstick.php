@@ -8,6 +8,14 @@ function Matchstick($nb_line, $nb_alu) {
     $remainingMatches  = array_reduce($board, function ($previous, $current) {
         return $previous + $current;
     });
+    // GAME MOD MENU
+    echo "Choose The Game Mode:\n";
+    color(190, "(1) Player\n");
+    color(193, "(2) IA\n");
+    do {
+        $mod = readline("Your Choise: ");
+    } while ($mod != 1 && $mod != 2);
+
 }
 /**
  * Initialize the game board
