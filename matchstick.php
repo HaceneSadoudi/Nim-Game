@@ -63,6 +63,8 @@ function Matchstick($nb_line, $nb_alu) {
             print("Matches: $matches\n");
             echo "AI removed $matches match(es) from line $line.\n";
         }
+        $board[$line - 1] -= $matches;
+        $remainingMatches -= $matches;
 /**
  * Initialize the game board
  * 
