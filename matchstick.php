@@ -4,6 +4,10 @@ function Matchstick($nb_line, $nb_alu) {
     $user = 1;
     $boardWidth = (2 * $nb_line) + 1;
     $humanTurn = true;
+    // Number of matches remaining in the board
+    $remainingMatches  = array_reduce($board, function ($previous, $current) {
+        return $previous + $current;
+    });
 }
 /**
  * Initialize the game board
