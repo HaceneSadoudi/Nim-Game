@@ -16,7 +16,37 @@ function Matchstick($nb_line, $nb_alu) {
         $mod = readline("Your Choise: ");
     } while ($mod != 1 && $mod != 2);
 
-}
+    while ($remainingMatches > 0) {
+        display($board, $boardWidth);
+        if ($mod == 1) color(39, "Player $user turn:\n");
+        elseif ($humanTurn) echo color(6, "Your turn:\n");
+        else echo color(6, "AI's turn...\n");
+        if ($mod == 1 || $humanTurn) { // Player turn
+            // Ask for line number
+            $line = readline("Line: ");
+            while (!is_numeric($line) || $line < 1 || $line > $nb_line || $board[$line - 1] == 0) {
+                if (!is_numeric($line)) {
+                    color(1, "Error: invalid input (positive number expected)\n");
+                } else {
+                    color(1, "Error: this line is out of range\n");
+                }
+                $line = readline("Line: ");
+            }
+            // Ask for matche number
+            $matches = readline("Matches: ");
+            while (!is_numeric($matches) || $matches > $nb_alu || $matches < 1 || $board[$line - 1] < $matches) {
+                if (!is_numeric($matches)) {
+                    color(1, "Error: invalid input (positive number expected)\n");
+                } elseif ($matches > $nb_alu) {
+                    color(1, "Error: you cannot remove more than 5 matches per turn\n");
+                } elseif ($matches < 1) {
+                    color(1, "Error: you have to remove at least one match\n");
+                } else {
+                    color(1, "Error: not enough matches on this line\n");
+                }
+                $matches = readline("Matches: ");
+            }
+        }
 /**
  * Initialize the game board
  * 
