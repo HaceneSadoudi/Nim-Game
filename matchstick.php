@@ -65,6 +65,10 @@ function Matchstick($nb_line, $nb_alu) {
         }
         $board[$line - 1] -= $matches;
         $remainingMatches -= $matches;
+        // Switch player turn
+        if ($mod == 1) $user = $user == 1 ? 2 : 1;
+        else $humanTurn = !$humanTurn;
+    }
 /**
  * Initialize the game board
  * 
