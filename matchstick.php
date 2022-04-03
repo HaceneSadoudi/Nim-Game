@@ -16,6 +16,16 @@ function init($board, $nb_line) {
     return $board;
 }
 
+/**
+ * Display the game board in the console
+ * A match is represented by a pipeline |
+ * 
+ * @param  array  $board  : game board
+ * @param  int    $width  : game board width  
+ * 
+ * @author Hacene Sadoudi <sadoudi2019@gmail.com>
+ * @return void
+ */
 function display($board, $width) {
     for ($j = 0; $j < $width; $j++) color(rand(9, 15), "*");
     echo "\n";
