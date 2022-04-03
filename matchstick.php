@@ -1,3 +1,20 @@
+<?php
+
+/**
+ * Main program
+ * Nim is a mathematical game of strategy in which two players take turns removing 
+ * (or "nimming") objects from distinct heaps or piles. On each turn, a player must 
+ * remove at least one object, and may remove any number of objects provided they 
+ * all come from the same heap or pile. 
+ * The goal of the game is either to avoid taking the last object or to take the last 
+ * object. 
+ * 
+ * @param  int    $nb_line : number of board lines
+ * @param  int    $nb_alu : the maximum number of matches that can be removed 
+ * 
+ * @author Hacene Sadoudi <sadoudi2019@gmail.com>
+ * @return void
+ */
 function Matchstick($nb_line, $nb_alu) {
     $board = array();
     $board = init($board, $nb_line);
@@ -136,3 +153,5 @@ function display($board, $width) {
 function color($nbr, $txt) {
     echo `tput setaf $nbr` . $txt . `tput sgr0`;
 }
+
+Matchstick(intval($argv[1]), intval($argv[2]));
