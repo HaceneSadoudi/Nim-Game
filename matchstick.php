@@ -16,3 +16,6 @@ function init($board, $nb_line) {
     return $board;
 }
 
+function color($nbr, $txt) {
+    echo `tput setaf $nbr` . $txt . `tput sgr0`;
+}
