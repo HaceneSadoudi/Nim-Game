@@ -46,6 +46,22 @@ function Matchstick($nb_line, $nb_alu) {
                 }
                 $matches = readline("Matches: ");
             }
+        } else { // IA turn
+            // Choose a random line
+            do {
+                $line = rand(1, sizeof($board));
+            } while (($line > $nb_line || $board[$line - 1] == 0));
+            // Choose a random number of matches
+            do {
+                $matches = rand(1, $board[$line - 1]);
+            } while ($matches > $nb_alu || $board[$line - 1] < $matches);
+        }
+        if ($mod == 1) echo "Player $user removed $matches match(es) from line $line.\n";
+        elseif ($humanTurn) echo "Player removed $matches match(es) from line $line.\n";
+        else {
+            print("Line: $line\n");
+            print("Matches: $matches\n");
+            echo "AI removed $matches match(es) from line $line.\n";
         }
 /**
  * Initialize the game board
