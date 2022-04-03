@@ -1,3 +1,10 @@
+function Matchstick($nb_line, $nb_alu) {
+    $board = array();
+    $board = init($board, $nb_line);
+    $user = 1;
+    $boardWidth = (2 * $nb_line) + 1;
+    $humanTurn = true;
+}
 /**
  * Initialize the game board
  * 
